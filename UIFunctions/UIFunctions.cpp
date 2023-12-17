@@ -1,4 +1,4 @@
-#include "Inventory.h"
+#include "../Inventory/Inventory.h"
 #include "UIFunctions.h"
 #include <iostream>
 #include <random>

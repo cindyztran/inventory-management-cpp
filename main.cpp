@@ -1,5 +1,5 @@
-#include "Inventory.h"
-#include "UIFunctions.h"
+#include "Inventory/Inventory.h"
+#include "UIFunctions/UIFunctions.h"
 #include <iostream>
 
 int main()

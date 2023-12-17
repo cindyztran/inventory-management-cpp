@@ -1,7 +1,7 @@
 #ifndef UIFUNCTIONS_H
 #define UIFUNCTIONS_H
 
-#include "Inventory.h"
+#include "../Inventory/Inventory.h"
 
 void addProductToInventory(Inventory &inventory);
 void removeProductFromInventory(Inventory &inventory);
