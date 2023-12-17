@@ -1,0 +1,14 @@
+# Executable files
+MyProgram
+/bin/
+
+# Build outputs
+/build/
+/*.exe
+/*.out
+
+# VS Code settings
+.vscode/
+
+# System specific files
+.DS_Store    # macOS filesystem file
