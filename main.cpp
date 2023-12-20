@@ -1,12 +1,14 @@
+#include <iostream>
+#include <string>
 #include "Inventory/Inventory.h"
 #include "UIFunctions/UIFunctions.h"
-#include <iostream>
 
 int main()
 {
     Inventory inventory;
     int choice;
     bool running = true;
+    std::string filename;
 
     while (running)
     {
@@ -15,6 +17,8 @@ int main()
         std::cout << "2. Remove Product" << std::endl;
         std::cout << "3. List Products" << std::endl;
         std::cout << "4. Quit" << std::endl;
+        std::cout << "5. Save to file" << std::endl;
+        std::cout << "6. Load from file" << std::endl;
         std::cout << "Enter your choice: ";
         std::cin >> choice;
 
@@ -31,6 +35,16 @@ int main()
             break;
         case 4:
             running = false;
+            break;
+        case 5:
+            std::cout << "Enter the filename to save: ";
+            std::cin >> filename;
+            inventory.saveToFile(filename);
+            break;
+        case 6:
+            std::cout << "Enter the filename to load: ";
+            std::cin >> filename;
+            inventory.loadFromFile(filename);
             break;
         default:
             std::cout << "Invalid choice" << std::endl;

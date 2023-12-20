@@ -13,4 +13,6 @@ public:
   void removeProduct(int productId);
   std::optional<Product> getProduct(int productId) const;
   void listProducts() const;
+  void saveToFile(const std::string &filename);
+  void loadFromFile(const std::string &filename);
 };
