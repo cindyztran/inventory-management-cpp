@@ -9,6 +9,7 @@ int main()
     int choice;
     bool running = true;
     std::string filename;
+    std::string searchTerm;
 
     while (running)
     {
@@ -19,6 +20,7 @@ int main()
         std::cout << "4. Quit" << std::endl;
         std::cout << "5. Save to file" << std::endl;
         std::cout << "6. Load from file" << std::endl;
+        std::cout << "7. Search for a product" << std::endl;
         std::cout << "Enter your choice: ";
         std::cin >> choice;
 
@@ -45,6 +47,11 @@ int main()
             std::cout << "Enter the filename to load: ";
             std::cin >> filename;
             inventory.loadFromFile(filename);
+            break;
+        case 7:
+            std::cout << "Enter the search term: ";
+            std::cin >> searchTerm;
+            inventory.searchProduct(searchTerm);
             break;
         default:
             std::cout << "Invalid choice" << std::endl;
