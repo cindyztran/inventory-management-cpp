@@ -16,4 +16,5 @@ public:
   void saveToFile(const std::string &filename);
   void loadFromFile(const std::string &filename);
   std::optional<Product> searchProduct(const std::string &searchTerm) const;
+  void sortProducts(bool byName);
 };

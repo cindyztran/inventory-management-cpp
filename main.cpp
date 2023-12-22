@@ -10,6 +10,7 @@ int main()
     bool running = true;
     std::string filename;
     std::string searchTerm;
+    bool shouldSort;
 
     while (running)
     {
@@ -21,6 +22,7 @@ int main()
         std::cout << "5. Save to file" << std::endl;
         std::cout << "6. Load from file" << std::endl;
         std::cout << "7. Search for a product" << std::endl;
+        std::cout << "8. Sort products" << std::endl;
         std::cout << "Enter your choice: ";
         std::cin >> choice;
 
@@ -52,6 +54,20 @@ int main()
             std::cout << "Enter the search term: ";
             std::cin >> searchTerm;
             inventory.searchProduct(searchTerm);
+            break;
+        case 8:
+            std::cout << "Enter true if you want to sort by name, false if you want to sort by ID: ";
+            std::cin >> std::boolalpha >> shouldSort;
+            if (std::cin.fail())
+            {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Invalid input. Please enter true or false." << std::endl;
+            }
+            else
+            {
+                inventory.sortProducts(shouldSort);
+            }
             break;
         default:
             std::cout << "Invalid choice" << std::endl;

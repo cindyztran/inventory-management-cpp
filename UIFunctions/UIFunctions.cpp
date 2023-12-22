@@ -100,17 +100,3 @@ void Inventory::loadFromFile(const std::string &filename)
   }
   file.close();
 }
-std::optional<Product> Inventory::searchProduct(const std::string &searchTerm) const
-{
-  std::cout << "Searching for " << searchTerm << std::endl;
-  std::cout << "ID\tName\tPrice\tQuantity" << std::endl;
-  for (const auto &product : products)
-  {
-    if (product.getName() == searchTerm || std::to_string(product.getId()) == searchTerm)
-    {
-      std::cout << product.getId() << "\t" << product.getName() << "\t" << product.getPrice() << "\t" << product.getQuantity() << std::endl;
-      return product;
-    }
-  }
-  return std::nullopt;
-}
